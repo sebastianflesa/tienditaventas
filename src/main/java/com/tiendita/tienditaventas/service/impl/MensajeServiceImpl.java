@@ -23,13 +23,29 @@ public class MensajeServiceImpl implements MensajeService {
 
 	@Override
 	public void enviarMensaje(String mensaje) {
-		rabbitTemplate.convertAndSend(RabbitMQConfig.MAIN_QUEUE, mensaje);
+		System.out.println("Enviando mensaje: " + mensaje);
+		
+		// Verificar que el exchange existe antes de enviar
+		try {
+			rabbitTemplate.convertAndSend(RabbitMQConfig.MAIN_EXCHANGE, RabbitMQConfig.MAIN_ROUTING_KEY, mensaje);
+			System.out.println("Mensaje enviado exitosamente al exchange: " + RabbitMQConfig.MAIN_EXCHANGE + " con routing key: " + RabbitMQConfig.MAIN_ROUTING_KEY);
+		} catch (Exception e) {
+			System.err.println("Error enviando mensaje: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void enviarObjeto(Object objeto) {
-
-		rabbitTemplate.convertAndSend(RabbitMQConfig.MAIN_QUEUE, objeto);
+		System.out.println("Enviando objeto: " + objeto);
+		
+		try {
+			rabbitTemplate.convertAndSend(RabbitMQConfig.MAIN_EXCHANGE, RabbitMQConfig.MAIN_ROUTING_KEY, objeto);
+			System.out.println("Objeto enviado exitosamente al exchange: " + RabbitMQConfig.MAIN_EXCHANGE + " con routing key: " + RabbitMQConfig.MAIN_ROUTING_KEY);
+		} catch (Exception e) {
+			System.err.println("Error enviando objeto: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	/*

@@ -1,0 +1,11 @@
+com\tiendita\tienditaventas\controller\MensajeController.class
+com\tiendita\tienditaventas\service\impl\ProductoServiceImpl.class
+com\tiendita\tienditaventas\config\RabbitMQConfig.class
+com\tiendita\tienditaventas\repository\ProductoRepository.class
+com\tiendita\tienditaventas\dto\StockUpdateDTO.class
+com\tiendita\tienditaventas\service\impl\MensajeServiceImpl.class
+com\tiendita\tienditaventas\service\ProductoService.class
+com\tiendita\tienditaventas\controller\ProductoController.class
+com\tiendita\tienditaventas\models\Producto.class
+com\tiendita\tienditaventas\service\MensajeService.class
+com\tiendita\tienditaventas\TienditaventasApplication.class
