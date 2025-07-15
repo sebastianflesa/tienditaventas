@@ -80,7 +80,7 @@ public class RabbitMQConfig {
 	@Bean
 	RabbitAdmin rabbitAdmin() {
 		RabbitAdmin admin = new RabbitAdmin(connectionFactory());
-		
+		admin.setAutoStartup(false);
 		// Declarar explícitamente todos los elementos con logging
 		System.out.println("Declarando exchanges y queues...");
 		
