@@ -33,7 +33,7 @@ public class RabbitMQConfig {
 	CachingConnectionFactory connectionFactory() {
 
 		CachingConnectionFactory factory = new CachingConnectionFactory();
-		factory.setHost("localhost");
+		factory.setHost("34.237.247.129");
 		factory.setPort(5672);
 		factory.setUsername("guest");
 		factory.setPassword("guest");
@@ -80,7 +80,7 @@ public class RabbitMQConfig {
 	@Bean
 	RabbitAdmin rabbitAdmin() {
 		RabbitAdmin admin = new RabbitAdmin(connectionFactory());
-		admin.setAutoStartup(false);
+		
 		// Declarar explícitamente todos los elementos con logging
 		System.out.println("Declarando exchanges y queues...");
 		
